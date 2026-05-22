@@ -5,7 +5,20 @@
 </head>
 <body>
 
-</body>
-</html>
 <h1>Algoritmo Scanline</h1>
     <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        // (Aquí va la clase ScanlineFill del primer commit)
+
+        const ctx = document.getElementById("canvas").getContext("2d");
+        const poly = [{x:100,y:100}, {x:300,y:120}, {x:350,y:250}, {x:250,y:350}, {x:120,y:300}];
+        
+        new ScanlineFill(ctx).fill(poly, "skyblue");
+        
+        // Dibujar borde negro
+        ctx.beginPath();
+        poly.forEach(p => ctx.lineTo(p.x, p.y));
+        ctx.closePath();
+        ctx.stroke();
+    </script>
+    
